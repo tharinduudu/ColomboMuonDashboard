@@ -251,7 +251,20 @@ VIEW_OPTIONS = [
     "percentage change per minute",
     "percentage change per hour",
 ]
-view = st.radio("View", VIEW_OPTIONS, index=0, horizontal=True, label_visibility="collapsed")
+
+# Default to "percentage change per hour" on first load, then remember the user's choice
+if "view" not in st.session_state:
+    st.session_state["view"] = "percentage change per hour"
+
+default_idx = VIEW_OPTIONS.index(st.session_state["view"])
+view = st.radio(
+    "View",
+    VIEW_OPTIONS,
+    index=default_idx,            # sets the initial selection
+    horizontal=True,
+    label_visibility="collapsed",
+    key="view"                    # Streamlit will remember the selection on reruns
+)
 
 st.write("")  # small spacer
 
