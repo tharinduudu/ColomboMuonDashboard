@@ -11,7 +11,7 @@ import requests
 import streamlit as st
 
 st.set_page_config(page_title="Muon Log Dashboard", layout="wide")
-st.title("Colombo Detector Log Dashboard")
+st.title("Colombo Detector Dashboard")
 
 # ---------------- GitHub source (EDIT THESE) ----------------
 GH_OWNER    = "nithyabiyanwila"      # e.g., "nithyabiyanwila"
